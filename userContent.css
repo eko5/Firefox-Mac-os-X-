@@ -1,0 +1,61 @@
+:root {
+    scrollbar-color: #3d3c3b #e5c0c0a9;
+    scrollbar-width: thick; 
+}
+
+@-moz-document url('about:home'), url('about:newtab') {
+    /*Personalizacja strony startowej newtab*/    
+    body {
+                   background-image: url(images/index.jpeg) !important;
+                   background-repeat: repeat-y  !important;
+                   background-position: auto !important;
+                   background-size: cover !important;
+                 }
+}
+
+/* ============= Error Pages ============= */
+
+.clockSkewError #errorPageContainer,
+.connectionFailure #errorPageContainer,
+.dnsNotFound #errorPageContainer,
+.malformedURI #errorPageContainer,
+.neterror #errorPageContainer,
+.netInterrupt #errorPageContainer,
+.netOffline #errorPageContainer,
+.netReset #errorPageContainer,
+.netTimeout #errorPageContainer {
+    background: url("./images/giphy.gif") no-repeat left center !important;
+    background-size: 38% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    max-width: calc(100vw / 2) !important;
+    max-height: calc(100vh / 2) !important;
+}
+
+.container #text-container {
+    padding-inline-start: 38% !important;
+}
+
+@-moz-document url-prefix("about:restartrequired") {
+    #errorPageContainer {
+        background: url("./icons/fox-transparent.gif") no-repeat left center !important;
+        background-size: 38% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        max-width: calc(100vw / 2) !important;
+        max-height: calc(100vh / 2) !important;
+    }
+    #text-container {
+        padding-inline-start: 38% !important;
+    }
+
+}
+
+.logo-and-wordmark .logo { background: url("images/logo/mac-os-x.svg") no-repeat !important; background-size: cover !important; display: inline-block !important;}
+    .logo {height: 120px !important; width: 120px !important; }    
+    .wordmark { background: url("images/firefox-wordmark.svg") no-repeat center center !important; background-size: 134px !important;-moz-context-properties: fill !important;
+    display: inline-block !important; height: 82px !important; margin-inline-start: 16px !important; width: 134px !important;}
+    .ds-outer-wrapper-breakpoint-override main {min-width: 366px !important;}
+    }
+    @-moz-document url(about:privatebrowsing){
+        .wordmark { background: url("images/firefox-wordmark.svg") no-repeat center center !important; background-size: 134px !important;}}

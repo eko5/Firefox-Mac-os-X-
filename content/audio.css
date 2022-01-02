@@ -1,0 +1,39 @@
+/*Label de medios "Reproduciendo" modifiado*/
+@keyframes slide1{ from { transform: scale(1.0,1.0);}to {transform: scale(0.6,1.0);}}
+tab:not([pinned]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {display: -moz-box !important;margin-top:0px !important; margin-bottom: 4px !important; opacity: 1 !important; margin-left: 0px !important;
+  font-weight: bold !important; background: linear-gradient(to right, #00aaff 0%, #a06bff 50%, #cd4AA2 100%); font-size: 2px !important;
+  color: transparent !important; border-radius:4px !important; animation: 500ms infinite ease-in-out; animation-name: slide1;}
+tab:not([pinned],[selected]) .tab-secondary-label:is([soundplaying], [pictureinpicture]) {display: -moz-box !important;margin-top:0px !important; margin-bottom: 2px !important; opacity: 1 !important; 
+  font-weight: bold !important;
+  color: transparent !important; border-radius:4px !important}
+.tab-secondary-label:is([muted], [activemedia-blocked]) {display: none !important; transition-duration: 0ms !important}
+
+/*--------ícono de sonido simpre visible en pestañas con sonido, sin dejar de mostrar el favicon-------*/
+.tab-icon-image:not([pinned]){ opacity: 1 !important;}
+.tab-icon-overlay{height: 13px !important; width: 14px !important; z-index: 1 ; padding: 0px !important}
+
+.tab-icon-overlay[activemedia-blocked] { stroke:color-mix(in srgb , #ff0000 90%, var(--lwt-tab-text)) !important; color:var(--lwt-acent-color) !important; 
+  padding: 0px !important;height: 13px !important; width: 14px !important;}
+.tab-icon-overlay:is([pinned][activemedia-blocked]):hover {list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg") !important; 
+  stroke:  var(--lwt-accent-color) !important; color: var(--lwt-tab-text) !important; transition-duration: 150ms !important; opacity: 1 !important; fill-opacity: 1 !important}
+
+/*------ícono  reproduciendose-------*/
+.tab-icon-overlay:is([sharing],[soundplaying]):not([pinned]) {border-radius: 10px !important;
+  top: 12px; left: 8px !important; color: var(--lwt-tab-text) !important; background-color: var(--lwt-selected-tab-background-color) !important; } 
+.tab-icon-overlay:is([sharing],[soundplaying][selected]):not([pinned]){   fill-opacity: 1 !important;}
+
+  /*Compartiendo microfono y cámara*/
+    .tab-icon-overlay:not([crashed]):is([sharing]) {top: 12px !important; stroke: transparent !important;} 
+/*------muteado-------*/
+.tab-icon-overlay[muted]:not([pinned]) , .tab-icon-overlay[activemedia-blocked]:not([pinned]) { 
+border-radius: 10px !important; top: 12px; left: 8px !important;margin-right: 6px !important; animation: none !important; color:var(--lwt-tab-text) !important;
+  background-color: var(--button-bgcolor) !important; height: 13px !important; width: 14px !important;}
+  /*muteado seleccionado y no seleccionado*/
+     .tab-icon-overlay:not([selected="true"])[muted], .tab-icon-overlay:not([selected="true"])[activemedia-blocked] ,
+     .tab-icon-overlay:is([selected="true"][muted]) , .tab-icon-overlay[activemedia-blocked][selected="true"] {
+      fill-opacity: 0.5 !important;}
+  /*muteado hover*/
+    .tab-icon-overlay:not([pinned])[muted]:hover , .tab-icon-overlay:hover[activemedia-blocked]:hover:not([pinned]){ stroke: transparent !important; color: var(--lwt-tab-text) !important; fill-opacity: 1 !important;
+    list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg") !important; height: 13px !important; width: 14px !important;}
+
+.tab-icon-overlay:not([pinned]){ padding: 0px !important; }

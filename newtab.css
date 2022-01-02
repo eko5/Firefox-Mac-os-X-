@@ -1,0 +1,9 @@
+panelview .toolbarbutton-1:not([disabled], [open], :active):is(:hover), toolbarbutton.subviewbutton:not([disabled],
+[open], :active):is(:hover), .navigable.subviewbutton:not([disabled], [open], :active):is(:hover), 
+menu.subviewbutton:not([disabled], :active)[_moz-menuactive], 
+menuitem.subviewbutton:not([disabled], :active)[_moz-menuactive], 
+.widget-overflow-list .toolbarbutton-1:not([disabled], [open], :active):is(:hover), 
+.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), [overflowedItem="true"]) > toolbarbutton:not([disabled], 
+[open], :active):is(:hover) {
+    background-color: red !important;
+}
